@@ -74,9 +74,11 @@ export default function Home() {
           <h2 className={h2}>Do diagnóstico à <span className="hl">otimização.</span></h2>
           <ol className="mt-16 grid gap-10 text-left sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
             {steps.map(([t, d], i) => (
-              <Reveal key={t} delay={i * 0.06}>
-                <li className="list-none border-t border-white/15 pt-5"><span className="label">0{i + 1}</span><h3 className="mt-4 text-lg font-normal">{t}</h3><p className="mt-2 text-sm font-light text-muted">{d}</p></li>
-              </Reveal>
+              <li key={t} className="list-none">
+                <Reveal delay={i * 0.06}>
+                  <div className="border-t border-white/15 pt-5"><span className="label">0{i + 1}</span><h3 className="mt-4 text-lg font-normal">{t}</h3><p className="mt-2 text-sm font-light text-muted">{d}</p></div>
+                </Reveal>
+              </li>
             ))}
           </ol>
         </div>

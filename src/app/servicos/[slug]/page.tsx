@@ -73,9 +73,11 @@ export default async function Service({ params }: P) {
         <h2 className={h2}>Do primeiro contato ao <span className="hl">relatório.</span></h2>
         <ol className="mt-16 border-b border-white/10 text-left">
           {s.steps.map(([t, d], i) => (
-            <Reveal key={t} delay={i * 0.04}>
-              <li className="grid list-none gap-2 border-t border-white/10 py-7 md:grid-cols-[4rem_14rem_1fr] md:gap-8"><span className="label pt-1">0{i + 1}</span><h3 className="text-xl font-normal">{t}</h3><p className="font-light text-muted">{d}</p></li>
-            </Reveal>
+            <li key={t} className="list-none">
+              <Reveal delay={i * 0.04}>
+                <div className="grid gap-2 border-t border-white/10 py-7 md:grid-cols-[4rem_14rem_1fr] md:gap-8"><span className="label pt-1">0{i + 1}</span><h3 className="text-xl font-normal">{t}</h3><p className="font-light text-muted">{d}</p></div>
+              </Reveal>
+            </li>
           ))}
         </ol>
       </section>

@@ -31,8 +31,9 @@ export function Hero() {
 
         <div className="rise mt-14 flex flex-col items-center gap-5" style={d(1.3)}>
           <div className="hair" aria-hidden="true" />
-          <p className="label !text-[0.7rem] md:!text-sm" aria-label="Medir, otimizar, escalar.">
-            {words.map((w, i) => <span key={w} aria-hidden="true" className="cycle" style={d(i * 3)}>{w}{i < 2 ? ", " : "."}{" "}</span>)}
+          <p className="label !text-[0.7rem] md:!text-sm">
+            <span className="sr-only">Medir, otimizar, escalar.</span>
+            <span aria-hidden="true">{words.map((w, i) => <span key={w} className="cycle" style={d(i * 3)}>{w}{i < 2 ? ", " : "."}{" "}</span>)}</span>
           </p>
           <div className="flex gap-3" aria-hidden="true">{words.map((w, i) => <i key={w} className="cycle-dot size-1.5 rounded-full bg-[#3a3e4c]" style={d(i * 3)} />)}</div>
         </div>
